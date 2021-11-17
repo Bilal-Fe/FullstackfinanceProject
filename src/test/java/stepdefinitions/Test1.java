@@ -9,6 +9,8 @@ public class Test1 {
     }
     @Then("test1")
     public void test1() {
+        System.out.println("selen");
+        System.out.println("ucar");
 
     }
 }
