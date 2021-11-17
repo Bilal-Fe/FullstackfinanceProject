@@ -7,7 +7,7 @@ public class Test1 {
     public void test() {
 
     }
-    @When("test1")
+    @Then("test1")
     public void test1() {
 
     }
