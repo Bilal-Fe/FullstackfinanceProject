@@ -3,8 +3,8 @@ package pages;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class MainPages {
-    public MainPages(){
+public class UserManagementPage {
+    public UserManagementPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 }
