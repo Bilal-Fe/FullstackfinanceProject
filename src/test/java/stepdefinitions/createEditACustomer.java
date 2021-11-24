@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPageElements;
 import pages.CreateEditACustomerPage;
+import pojos.RegisteredUser;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -18,51 +20,47 @@ public class createEditACustomer {
 
     CreateEditACustomerPage createEditACustomerPage =new CreateEditACustomerPage();
     CommonPageElements commonPageElements = new CommonPageElements();
+    Faker faker = new Faker();
+    RegisteredUser registeredUser = new RegisteredUser();
+    String elevenDigitsPhoneNumber = "234-456-21223";
+    String tenDigitsSsnNumber = "345-33-23434";
 
-    @Given("user is on the gmibank homepage")
-    public void user_is_on_the_gmibank_homepage(){
+    @Given("user is on the gmi bank webpage")
+    public void userIsOnTheGmiBankWebpage() {
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
     }
-//    @And("user clicks on data icon")
-//    public void user_clicks_on_data_icon(){
-//        createEditACustomerPage.signInDataIcon.click();
-//    }
-    @And("user clicks on sign in button")
-    public void user_clicks_on_signIn_button()  {
+
+    @When("user clicks sign in button")
+    public void userClicksSignInButton() {
         commonPageElements.clickSignInButton();
     }
-    @When("user enters username of the employee")
+
+    @And("user enters username of the employee")
     public void userEntersUsernameOfTheEmployee() {
-        createEditACustomerPage.userName.sendKeys("employee_user_name"+ Keys.ENTER);
     }
 
     @And("user enters password of the employee")
     public void userEntersPasswordOfTheEmployee() {
-        createEditACustomerPage.passWord.sendKeys("employee_password"+Keys.ENTER);
     }
 
-    @And("user clicks on sign in")
-    public void user_clicks_on_signIn(){
-
-        createEditACustomerPage.signIn.click();
+    @Then("user clicks on sign in")
+    public void userClicksOnSignIn() {
+    }
+    @And("user clicks on My Operations drop down menu")
+    public void userClicksOnMyOperationsDropDownMenu() {
     }
 
-    @And("user clicks on {string} drop down menu")
-    public void userClicksOnDropDownMenu(String arg0) {
+    @And("user selects Manage Customers")
+    public void userSelectsManageCustomers() {
     }
 
-    @And("user selects {string}")
-    public void userSelects(String arg0) {
+    @And("user clicks on Create a new Customer button")
+    public void userClicksOnCreateANewCustomerButton() {
     }
 
-    @And("user clicks on {string} button")
-    public void userClicksOnButton(String arg0) {
+    @Then("verify Create or edit a Customer")
+    public void verifyCreateOrEditACustomer() {
     }
-
-    @Then("verify {string}")
-    public void verify(String arg0) {
-    }
-
     @And("user is on the application page")
     public void userIsOnTheApplicationPage() {
         createEditACustomerPage.createANewCustomer.click();
@@ -170,7 +168,5 @@ public class createEditACustomer {
     @When("user clicks on the save button")
     public void userClicksOnTheSaveButton() {
     }
-
-
 
 }
