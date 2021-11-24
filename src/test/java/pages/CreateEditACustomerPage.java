@@ -11,15 +11,47 @@ public class CreateEditACustomerPage {
     public CreateEditACustomerPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement signInDataIcon;
 
+    @FindBy(xpath = "//a[@id='login-item']")
+    public WebElement signInButton;
 
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement userName;
 
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement passWord;
 
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signIn;
 
+    @FindBy(xpath = "//a[@id='jh-create-entity']")
+    public WebElement createANewCustomer;
 
+    @FindBy(xpath = "//input[@id='search-ssn']")
+    public WebElement SSN;
 
+    @FindBy(xpath = "//button[@class='btn btn-secondary']")
+    public WebElement searchbutton;
 
+    @FindBy(xpath = "//input[@id='tp-customer-firstName']")
+    public WebElement firstName;
 
+    @FindBy(xpath = "//input[@id='tp-customer-lastName']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//input[@id='tp-customer-middleInitial']")
+    public WebElement middleInitial;
+
+    @FindBy(xpath = "//input[@id='tp-customer-email']")
+    public WebElement email;
+
+    @FindBy(xpath = "/input[@id='tp-customer-mobilePhoneNumber']")
+    public WebElement mobilePhoneNumber;
+
+    @FindBy(xpath = "//input[@id='tp-customer-phoneNumber']")
+    public WebElement phoneNumber;
 
     @FindBy(xpath = "//input[@name='zipCode']")
     public WebElement zipCode;
@@ -51,5 +83,9 @@ public class CreateEditACustomerPage {
     @FindBy(xpath = "(//*[.='Zelle Enrolled'])[1]")
     public WebElement zelleEnrolled;
 
+    public void clickSignInButton() {
+        signInDataIcon.click();
+        signInButton.click();
+    }
 
 }
