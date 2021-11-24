@@ -2,6 +2,7 @@ package utilities;
 import pojos.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 public class WriteToTxt {
     public static void saveDataInFile(String fileName, Customer[] customers)  {
@@ -142,6 +143,22 @@ public class WriteToTxt {
             writer.append(registrant.getAddress()+","+ registrant.getEmail()+",\n");
             writer.close();
         } catch(Exception e){
+        }
+    }
+
+    public static void saveRegisteredUserData(String fileName, RegisteredUser registeredUser) throws IOException {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+
+            writer.append(registeredUser.getPassword() + " , " + registeredUser.getUsername() + " , ");
+            writer.append(registeredUser.getFirstName() +"," + registeredUser.getLastName() + " , ");
+            writer.append(registeredUser.getSsn() + "," + registeredUser.getPhoneNumber() + " , ");
+            writer.append(registeredUser.getAddress() +"," + registeredUser.getEmail() + " \n ");
+
+            writer.close();
+
+        }catch (Exception e) {
+
         }
     }
 
