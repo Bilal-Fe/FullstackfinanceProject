@@ -1,4 +1,5 @@
 package utilities;
+import io.cucumber.datatable.DataTable;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -7,10 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
 public class ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
@@ -167,4 +165,16 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+
+    public static void waitAndSendText(WebElement webElement, String text) {
+        waitFor(1);
+        webElement.sendKeys(text);
+    }
+
+    public static String getDataTableData(DataTable dataTable, String value) {
+        List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);
+        String result = list.get(0).get(value);
+        return result;
+    }
+
 }
