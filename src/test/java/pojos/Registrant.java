@@ -12,9 +12,7 @@ public class Registrant {
     public String getSsn() {
         return ssn;
     }
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
-    }
+    public void setSsn(String ssn) {this.ssn = ssn;}
     public String getFirstName() {
         return firstName;
     }
