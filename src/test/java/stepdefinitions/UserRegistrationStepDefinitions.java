@@ -45,6 +45,7 @@ public class UserRegistrationStepDefinitions {
         ssnNumber = faker.idNumber().ssnValid();
         registeredUser.setSsn(ssnNumber);
         ReusableMethods.waitAndSendText(registrationPage.ssn, ssnNumber);
+
     }
     @When("user enters first name {string}")
     public void user_enters_first_name(String fName) {
