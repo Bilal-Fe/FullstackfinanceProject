@@ -176,5 +176,14 @@ public class ReusableMethods {
         String result = list.get(0).get(value);
         return result;
     }
+    public static void selectFromDropDown(WebElement selectData, String selectOption){
+        Select selectElement = new Select(selectData);
+        selectElement.selectByVisibleText(selectOption);
+    }
 
+    public static void selectFromDropDown(WebElement selectData, int indexNumber){
+
+        Select selectElement = new Select(selectData);
+        selectElement.selectByIndex(indexNumber);
+    }
 }

@@ -20,15 +20,15 @@ public class LoginPage {
     public WebElement userNameBox;
 
     @FindBy(xpath = "//input[@name='password']")
-    public WebElement passwordBox;
+    public WebElement passwordLoginBox;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInSubmit;
 
-    @FindBy(xpath = "//div[@class='alert alert-warning fade show'][1]")
+    @FindBy(xpath = "//span[contains(text(),'forget')]")
     public WebElement passwordResetButton;
 
-    @FindBy(xpath = "//div[@class='alert alert-warning fade show'][2]")
+    @FindBy(xpath = "//span[text()='You don't have an account yet?']")
     public WebElement newRegisterButton;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary']")
@@ -46,5 +46,16 @@ public class LoginPage {
     @FindBy(xpath = "//span[text()='Administration']")
     public WebElement administrationButton;
 
+    @FindBy(xpath = "//a[@href='/logout']")
+    public WebElement signOutButton;
+
+    @FindBy(xpath = "//a[text()='My Accounts']")
+    public WebElement myAccountButton;
+
+    @FindBy(xpath = "//strong[text()='Failed to sign in!']")
+    public WebElement failedMessage;
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement resetPasswordBox;
 
 }
