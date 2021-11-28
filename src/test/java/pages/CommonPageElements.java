@@ -43,6 +43,15 @@ public class CommonPageElements {
     @FindBy(xpath = "//span[contains(text(),'Register')]")
     public WebElement register;
 
+    @FindBy(id = "username")
+    public WebElement userName;
+
+    @FindBy(id = "password")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement signIn;
+
     public void clickSignInButton() {
         accountMenu.click();
         signInButton.click();
