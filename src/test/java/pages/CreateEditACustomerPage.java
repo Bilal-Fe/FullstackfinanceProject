@@ -3,8 +3,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-import org.openqa.selenium.support.PageFactory;
-import utilities.Driver;
 
 public class CreateEditACustomerPage {
 
@@ -29,11 +27,14 @@ public class CreateEditACustomerPage {
     @FindBy(xpath = "//a[@id='jh-create-entity']")
     public WebElement createANewCustomer;
 
+    @FindBy(xpath = "//div[@role='alert']")
+    public boolean alertMessageDisplayed;
+
     @FindBy(xpath = "//input[@id='search-ssn']")
     public WebElement SSN;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary']")
-    public WebElement searchbutton;
+    public WebElement button;
 
     @FindBy(xpath = "//input[@id='tp-customer-firstName']")
     public WebElement firstName;
@@ -47,7 +48,7 @@ public class CreateEditACustomerPage {
     @FindBy(xpath = "//input[@id='tp-customer-email']")
     public WebElement email;
 
-    @FindBy(xpath = "/input[@id='tp-customer-mobilePhoneNumber']")
+    @FindBy(xpath = "//input[@name='mobilePhoneNumber']")
     public WebElement mobilePhoneNumber;
 
     @FindBy(xpath = "//input[@id='tp-customer-phoneNumber']")
@@ -79,6 +80,9 @@ public class CreateEditACustomerPage {
 
     @FindBy(xpath = "//option[@value='2310']")
     public WebElement savingAccount;
+
+    @FindBy(xpath = "//button[@id='save-entity']")
+    public WebElement saveButton;
 
     @FindBy(xpath = "(//*[.='Zelle Enrolled'])[1]")
     public WebElement zelleEnrolled;
