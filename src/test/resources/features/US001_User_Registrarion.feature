@@ -1,4 +1,5 @@
 @user_registration
+@valid_user_registration
 Feature: Registration
   Background:
     Given user is on the gmi bank application page

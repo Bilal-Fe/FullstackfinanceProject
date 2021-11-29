@@ -170,4 +170,94 @@ public class UserRegistrationStepDefinitions {
         int lengthOfSsn = enteredSsnNumber.length();
         Assert.assertEquals(9, lengthOfSsn);
     }
+
+    @Given("user click on login button")
+    public void user_click_on_login_button() {
+        commonPageElements.clickSignInButton();
+    }
+
+    @When("user enters invalid ssn {string}")
+    public void user_enters_invalid_ssn(String invalidSsn) {
+        registrationPage.ssn.sendKeys(invalidSsn);
+    }
+
+    @Then("Verify SSN text box does not contain {string}")
+    public void verify_ssn_text_box_does_not_contain(String symbol) {
+        String invalidSsn = registrationPage.ssn.getAttribute("value");
+        System.out.println(invalidSsn);
+        Assert.assertFalse("SSN number contains invalid symbol",invalidSsn.contains(symbol));
+    }
+
+    @When("user enters invalid phone number {string}")
+    public void user_enters_invalid_phone_number(String invalidPhone) {
+        registrationPage.phoneNumber.sendKeys(invalidPhone);
+    }
+    @Then("Verify Phone Number text box does not contain {string}")
+    public void verify_phone_number_text_box_does_not_contain(String symbol) {
+        String invalidNumber = registrationPage.phoneNumber.getAttribute("value");
+        Assert.assertFalse("Phone number contains invalid symbol",invalidNumber.contains(symbol));
+    }
+    @When("user enters invalid email address {string}")
+    public void user_enters_invalid_email_address(String invalidEmail) {
+        registrationPage.email.sendKeys(invalidEmail);
+    }
+    @Then("verify invalid email address message is displayed")
+    public void verify_invalid_email_address_message_is_displayed() {
+        boolean isInvalidEmailMessageDisplayed = registrationPage.invalidEmailMessage.isDisplayed();
+        Assert.assertTrue("Invalid email address message is not displayed",isInvalidEmailMessageDisplayed);
+    }
+
+    @Then("verify ssn is required message is displayed")
+    public void verify_ssn_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterSsnMessage.isDisplayed();
+        Assert.assertTrue("SSN is required message is not displayed",isDisplayed);
+    }
+
+    @Then("verify first name is required message is displayed")
+    public void verify_first_name_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterFirstNameMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
+    @Then("verify last name is required message is displayed")
+    public void verify_last_name_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterLastNameMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
+    @Then("verify address is required message is displayed")
+    public void verify_address_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterAddressMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
+    @Then("verify phone number is required message is displayed")
+    public void verify_phone_number_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterPhoneNumberMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
+    @Then("verify username is required message is displayed")
+    public void verify_username_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterUsernameMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
+    @Then("verify email is required message is displayed")
+    public void verify_email_is_required_message_is_displayed() {
+        boolean isDisplayed = registrationPage.enterEmailMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
+    @When("user enters invalid password {string} and confirms it")
+    public void user_enters_invalid_password_and_confirms_it(String invalidPassword) {
+        registrationPage.newPassword.sendKeys(invalidPassword);
+        registrationPage.confirmPassword.sendKeys(invalidPassword);
+    }
+    @Then("verify password error message")
+    public void verify_password_error_message() {
+        boolean isDisplayed = registrationPage.passwordContainError.isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+
 }
