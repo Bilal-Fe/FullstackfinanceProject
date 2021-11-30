@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@manage_customer",
+        tags = "@money_transfer",
         dryRun = false
 )
 
