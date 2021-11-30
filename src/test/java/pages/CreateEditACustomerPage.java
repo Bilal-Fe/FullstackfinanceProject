@@ -28,7 +28,7 @@ public class CreateEditACustomerPage {
     public WebElement createANewCustomer;
 
     @FindBy(xpath = "//div[@role='alert']")
-    public boolean alertMessageDisplayed;
+    public WebElement translationNotFoundMessage;
 
     @FindBy(xpath = "//input[@id='search-ssn']")
     public WebElement SSN;

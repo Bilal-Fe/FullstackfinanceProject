@@ -8,6 +8,7 @@ import pojos.User;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 public class ReadTxt {
 
@@ -184,10 +185,7 @@ public class ReadTxt {
         return all;
     }
 
-    public static void main(String[] args) {
-        String fileName = "C:\\Users\\bilal\\IdeaProjects\\LinnBank\\src\\test\\resources\\testData\\CustomerInformation.txt";
-        System.out.println(returnAWholeUser(fileName).get(8).getSsn());
-    }
+
     public static List<User> returnAWholeUser(String filePath){
         List<User>all = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -197,6 +195,7 @@ public class ReadTxt {
             while (line != null) {
                 User customer = new User();
 
+//
                 customer.setPassword(line.split(",")[0].trim());
                 customer.setUsername(line.split(",")[1].trim());
                 customer.setFirstName(line.split(",")[2].trim());

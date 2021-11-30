@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,12 +24,8 @@ public class createEditACustomer {
 
     CreateEditACustomerPage createEditACustomerPage = new CreateEditACustomerPage();
     CommonPageElements commonPageElements = new CommonPageElements();
+    Faker faker = new Faker();
 
-
-    @Given("user is on the application page")
-    public void user_is_on_the_application_page() {
-        Driver.getDriver().get("https://www.gmibank.com/");
-    }
 
     @Given("user clicks sign in button")
     public void user_clicks_register_button() {
@@ -37,11 +34,11 @@ public class createEditACustomer {
 
     @And("user enters username of customer")
     public void userEntersUsernameOfCustomer() {
-        commonPageElements.username.sendKeys("mary.jane");
+        commonPageElements.username.sendKeys(ConfigReader.getProperty("employee_user_name"));
     }
     @And("user enters password of customer")
     public void userEntersPasswordOfCustomer() {
-        commonPageElements.password.sendKeys("Mary.Jane1+");
+        commonPageElements.password.sendKeys(ConfigReader.getProperty("employee_password"));
     }
     @And("user clicks sign in button in page")
     public void userClicksSignInButtonInPage() {
@@ -64,7 +61,7 @@ public class createEditACustomer {
 
     @And("user enters ssn number")
     public void userEntersSsnNumber() {
-        createEditACustomerPage.SSN.sendKeys("456-57-8890");
+        createEditACustomerPage.SSN.sendKeys(ConfigReader.getProperty("customer_ssn"));
     }
 
     @And("user clicks on the search button")
@@ -73,14 +70,11 @@ public class createEditACustomer {
     }
     @Then("verify the {string} is displayed")
     public void verifyTheIsDisplayed(String arg0) {
+        Assert.assertTrue(createEditACustomerPage.translationNotFoundMessage.isDisplayed());
     }
     @Then("take the screenshot")
-    public void takeTheScreenshot() {
-    }
 
-    @Then("close the application")
-    public void closeTheApplication() {
-        Driver.closeDriver();
+    public void takeTheScreenshot() {
     }
 
     @And("user enters first name of customer")

@@ -27,7 +27,7 @@ Feature: US00010_Info_of_customer_can_be_created
     When user clicks on the save button button
     Then verify the "This field is required." is not displayed
     Then take the screenshot
-    Then close the application
+    Then close the webpage
 
   Scenario: TC02_last_name_of_customer_can_be_edited
     And user edits last name of customer
