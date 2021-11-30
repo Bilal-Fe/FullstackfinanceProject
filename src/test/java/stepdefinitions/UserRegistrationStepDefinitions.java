@@ -45,6 +45,7 @@ public class UserRegistrationStepDefinitions {
         ssnNumber = faker.idNumber().ssnValid();
         registeredUser.setSsn(ssnNumber);
         ReusableMethods.waitAndSendText(registrationPage.ssn, ssnNumber);
+
     }
     @When("user enters first name {string}")
     public void user_enters_first_name(String fName) {
@@ -104,7 +105,7 @@ public class UserRegistrationStepDefinitions {
     }
     @Then("close the application")
     public void close_the_application() {
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @When("user enters all valid required data and invalid nine digits phone number")

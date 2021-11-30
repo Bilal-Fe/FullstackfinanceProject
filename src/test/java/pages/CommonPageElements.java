@@ -16,6 +16,9 @@ public class CommonPageElements {
     @FindBy(xpath = "//span[contains(text(),'Manage Customers')]")
     public WebElement ManageCustomersButton;
 
+    @FindBy(xpath = "//span[contains(text(),'Manage Accounts')]")
+    public WebElement ManageAccountsButton;
+
     @FindBy(xpath = "//span[contains(text(),'Home')]")
     public WebElement home;
 
