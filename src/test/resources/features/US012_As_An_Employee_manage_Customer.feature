@@ -53,16 +53,3 @@ Feature: As_an_Employee_manage_Costumer
     When user clicks on delete button on the message page
     Then verify that success message for delete customer is displayed
     And close the webpage
-
-
-
-
-
-
-
-
-
-
-
-
-
