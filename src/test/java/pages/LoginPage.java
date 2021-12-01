@@ -25,17 +25,14 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInSubmit;
 
-    @FindBy(xpath = "//span[contains(text(),'forget')]")
+    @FindBy(xpath="//span[(text()='Did you forget your password?')]")
     public WebElement passwordResetButton;
 
-    @FindBy(xpath = "//span[text()='You don't have an account yet?']")
+    @FindBy(xpath="//span[contains(text(),'Register a new account')]")
     public WebElement newRegisterButton;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary']")
     public WebElement cancelButton;
-
-    @FindBy(xpath = "//input[@id='email']")
-    public WebElement emailBox;
 
     @FindBy(xpath = "//span[text()='Reset password']")
     public WebElement resetPasswordButton;

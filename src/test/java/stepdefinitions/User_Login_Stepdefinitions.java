@@ -19,6 +19,7 @@ public class User_Login_Stepdefinitions {
     public void user_is_on_the_main_page() {
 
         Driver.getDriver().get("https://www.gmibank.com/");
+
     }
 
     @And("user clicks login button")
@@ -176,17 +177,34 @@ public class User_Login_Stepdefinitions {
 
     @Given("user can access to registration page")
     public void userCanAccessToRegistrationPage() {
+        loginPage.userNameBox.sendKeys("Mark");
+        loginPage.passwordLoginBox.sendKeys("mark@gmail.com");
+        loginPage.signInSubmit.click();
+        ReusableMethods.waitFor(2);
         loginPage.newRegisterButton.click();
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("register"));
+
+    }
+      @Then ("verify that registration page")
+         public void verifyRegistrationPage(){
+
+         ReusableMethods.waitFor(2);
+         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("register"));
+
+   }
+    @And ("click back to main page")
+    public void backToMainPage(){
+        Driver.getDriver().navigate().back();
     }
 
     @Given("user can reset invalid password")
-    public void userCanResetInvalidPassword() {
-        ReusableMethods.waitFor(2);
+    public void userCanResetInvalidPassword() throws InterruptedException {
+        loginPage.userNameBox.sendKeys("Marry");
+        loginPage.passwordLoginBox.sendKeys("marry@gmail.com");
+        loginPage.signInSubmit.click();
         loginPage.passwordResetButton.click();
-        ReusableMethods.switchToWindow("GMIBANK");
-        ReusableMethods.waitFor(2);
+        Thread.sleep(2);
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/account/reset/request"));
+
     }
 
     @Then("verify that can reset password")
