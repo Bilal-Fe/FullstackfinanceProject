@@ -65,4 +65,36 @@ public class CommonPageElements {
         accountMenu.click();
         register.click();
     }
+//
+
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement username;
+
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement password1;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signin;
+
+    @FindBy(xpath = "//*[.='My Operations']")
+    public WebElement operations;
+
+    @FindBy(xpath = "//*[.='Manage Customers']")
+    public WebElement manageCustomers;
+
+    @FindBy(xpath = "//*[.='Create a new Customer']")
+    public WebElement createANewCustomer;
+
+    @FindBy(xpath = "//input[@name='search-ssn']")
+    public WebElement SSN;
+
+
+
+
+
+
 }
+
+
+
