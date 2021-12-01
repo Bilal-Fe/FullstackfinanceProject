@@ -4,11 +4,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+
 public class CreateEditACustomerPage {
 
-    public CreateEditACustomerPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public CreateEditACustomerPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
     @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement signInDataIcon;
 
@@ -78,9 +80,6 @@ public class CreateEditACustomerPage {
     @FindBy(xpath = "//select[@name='user.id']")
     public WebElement user;
 
-    @FindBy(xpath = "//option[@value='2310']")
-    public WebElement savingAccount;
-
     @FindBy(xpath = "//button[@id='save-entity']")
     public WebElement saveButton;
 
@@ -92,4 +91,41 @@ public class CreateEditACustomerPage {
         signInButton.click();
     }
 
+
+    @FindBy(xpath = "(//*[.='Sign in'])[1]")
+    public WebElement signInButtonSon;
+
+
+    @FindBy(xpath = "//button[@class='btn btn-secondary']")
+    public WebElement searchbutton;
+
+
+    @FindBy(xpath = "//span[contains(text(),'Middle Initial')]")
+    public WebElement MiddleInitial;
+
+    @FindBy(xpath = "//input[@name='phoneNumber']")
+    public WebElement PhoneNumber;
+
+    @FindBy(xpath = "//select[@id='tp-customer-account']")
+    public WebElement Account;
+
+    @FindBy(xpath = "(//input[@name='zelleEnrolled']")
+    public WebElement ZelleEnrolled;
+
+    @FindBy(xpath = "//*[.='Save']")
+    public WebElement savebutton;
+
+    @FindBy(xpath = "(//*[.='Create Date'])[3]")
+    public WebElement dateError;
+
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    public WebElement snnError;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement cityError;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement greenline;
+
 }
+

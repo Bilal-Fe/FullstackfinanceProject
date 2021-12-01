@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-import utilities.ReusableMethods;
+
 
 public class CommonPageElements {
     public CommonPageElements(){
@@ -65,14 +65,12 @@ public class CommonPageElements {
         accountMenu.click();
         register.click();
     }
-//
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement username;
 
-
-//    @FindBy(xpath = "//input[@name='password']")
-//    public WebElement password;
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement password1;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signin;
@@ -90,3 +88,6 @@ public class CommonPageElements {
     public WebElement SSN;
 
 }
+
+
+
