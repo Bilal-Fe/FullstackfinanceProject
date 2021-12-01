@@ -46,4 +46,13 @@ public class CustomerPages {
     public WebElement Delete;
 
 
+
+
+
+
+
+
+
+
+
 }
