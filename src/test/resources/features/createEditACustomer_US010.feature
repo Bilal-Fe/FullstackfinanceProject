@@ -11,10 +11,11 @@ Feature: US00010_Info_of_customer_can_be_created
     And user clicks manage customers button
     And user clicks create A New Customer button
     And user enters ssn number
+    And user clicks on the search button
+
 
   Scenario: TC01_name_of_customer_can_be_edited
 
-    And user clicks on the search button
     And user enters first name of customer
     And user enters last name of customer
     And user enters middle initial of customer

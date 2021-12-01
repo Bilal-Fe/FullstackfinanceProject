@@ -56,7 +56,6 @@ public class CommonPageElements {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement signIn;
 
-
     public void clickSignInButton() {
         accountMenu.click();
         signInButton.click();

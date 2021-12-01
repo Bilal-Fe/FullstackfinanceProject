@@ -14,7 +14,7 @@ Feature: US00011_the_date_should_be_typed_at_the_time_of_creation_a_customer
     And user enters ssn number
     And user clicks on the search button
 
-    And user enters name of customer
+    And user enters first name of customer
     And user enters last name of customer
     And user enters middle initial of customer
     And user enters Mobile Phone Number of customer
