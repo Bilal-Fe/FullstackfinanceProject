@@ -40,13 +40,10 @@ public class CreateEditACustomerPage {
     @FindBy(xpath = "//input[@name='middleInitial']")
     public WebElement middleInitial;
 
-<<<<<<< HEAD
+
     @FindBy(xpath = "//span[contains(text(),'Middle Initial')]")
     public WebElement MiddleInitial;
-=======
-   @FindBy(xpath = "//span[contains(text(),'Middle Initial')]")
-   public WebElement MiddleInitial;
->>>>>>> main
+
 
 
     @FindBy(xpath = "//input[@id='tp-customer-email']")

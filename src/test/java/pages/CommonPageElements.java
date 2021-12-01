@@ -72,7 +72,7 @@ public class CommonPageElements {
 
 
     @FindBy(xpath = "//input[@name='password']")
-    public WebElement password;
+    public WebElement password1;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signin;

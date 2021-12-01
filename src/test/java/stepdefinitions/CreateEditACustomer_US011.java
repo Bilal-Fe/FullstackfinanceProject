@@ -32,10 +32,10 @@ public class CreateEditACustomer_US011 {
     CommonPageElements commonPageElements = new CommonPageElements();
 
 
-    @Given("user is on the application page")
-    public void user_is_on_the_application_page() {
-        Driver.getDriver().get("https://www.gmibank.com/");
-    }
+//    @Given("user is on the application page")
+//    public void user_is_on_the_application_page() {
+//        Driver.getDriver().get("https://www.gmibank.com/");
+//    }
 
     @Given("user clicks sign in button")
     public void user_clicks_register_button() {
@@ -79,11 +79,10 @@ public class CreateEditACustomer_US011 {
     //BU EKLENDI
     @Then("verify the green text is displayed")
     public void verifyTheGreenTextIsDisplayed() {
+        ReusableMethods.waitFor(2);
         assertTrue(createEditACustomerPage.greenline.isDisplayed());
 
     }
-
-
 
     @And("user clicks on the search button")
     public void userClicksOnTheSearchButton() {
@@ -286,12 +285,12 @@ public class CreateEditACustomer_US011 {
         }
     }
 
-    @Then("close the application")
-    public void close_the_application() {
-        Driver.closeDriver();
-
-
-    }
+//    @Then("close the application")
+//    public void close_the_application() {
+//        Driver.closeDriver();
+//
+//
+//    }
 
 
 
