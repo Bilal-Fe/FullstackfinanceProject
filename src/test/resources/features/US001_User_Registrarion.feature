@@ -45,3 +45,4 @@ Feature: Registration
     When user enter eleven digits ssn number
     Then verify that only nine digits are in SSN Number textbox
     And close the application
+
