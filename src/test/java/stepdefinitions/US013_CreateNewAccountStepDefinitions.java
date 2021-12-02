@@ -21,6 +21,11 @@ public class US013_CreateNewAccountStepDefinitions {
     ManageAccountPage manageAccountPage = new ManageAccountPage();
     CustomerPages customerPages = new CustomerPages();
 
+    @Given("user clicks sign in button")
+    public void user_clicks_sign_in_button() {
+        commonPageElements.clickSignInButton();
+    }
+
     @When("user sign in as an employee")
     public void user_register_as_an_employee() {
 
@@ -29,7 +34,6 @@ public class US013_CreateNewAccountStepDefinitions {
         commonPageElements.signIn.click();
 
     }
-
 
     @And("user clicks My operations")
     public void userClicksMyOperations() {

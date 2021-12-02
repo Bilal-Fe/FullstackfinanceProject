@@ -204,6 +204,4 @@ public class ReusableMethods {
         Select selectElement = new Select(selectData);
         selectElement.selectByIndex(indexNumber);
     }
-
-
 }
