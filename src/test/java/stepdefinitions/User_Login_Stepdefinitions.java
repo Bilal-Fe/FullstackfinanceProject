@@ -22,16 +22,10 @@ public class User_Login_Stepdefinitions {
 
     }
 
-//    @And("user clicks login button")
-//    public void userClicksLoginButton() {
-//
-//        loginPage.loginDropdownClick.click();
-//    }
+    @And("user clicks login button")
+    public void userClicksLoginButton() {
 
-    @When("user clicks sign in button")
-    public void userClicksSignInButton() {
-        ReusableMethods.waitFor(2);
-        loginPage.signInClick.click();
+        loginPage.loginDropdownClick.click();
     }
 
     @Then("access to login page")

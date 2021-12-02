@@ -3,7 +3,6 @@
 Feature: Login_Functionality_With_Right_Credentials
   Background:
     Given user is on the main page
-    And user clicks login button
     When user clicks sign in button
     Then access to login page
 
