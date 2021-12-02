@@ -29,7 +29,7 @@ public class ManageAccountPage {
     @FindBy(xpath = "//select[@id='tp-account-accountStatusType']")
     public WebElement accountStatusTypeBox;
 
-    @FindBy(xpath = "//input[@id='tp-account-createDate']")
+    @FindBy(id = "tp-account-createDate")
     public WebElement createDateBox;
 
     @FindBy(xpath = "//input[@id='tp-account-closedDate']")
@@ -75,4 +75,7 @@ public class ManageAccountPage {
 
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement editButton;
+
+    @FindBy(xpath = "//span[.='Accounts']")
+    public WebElement accounts;
 }
