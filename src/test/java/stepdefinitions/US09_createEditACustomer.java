@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.CommonPageElements;
 import pages.CreateEditACustomerPage;
@@ -15,55 +16,70 @@ public class US09_createEditACustomer {
     CommonPageElements commonPageElements = new CommonPageElements();
     Faker faker = new Faker();
 
-    @Given("user clicks sign in button")
-    public void user_clicks_register_button() {
-        commonPageElements.clickSignInButton();
-    }
-
-    @And("user enters username of customer")
-    public void userEntersUsernameOfCustomer() {
-        commonPageElements.username.sendKeys(ConfigReader.getProperty("employee_user_name"));
-    }
-    @And("user enters password of customer")
-    public void userEntersPasswordOfCustomer() {
-        commonPageElements.password.sendKeys(ConfigReader.getProperty("employee_password"));
-    }
-    @And("user clicks sign in button in page")
-    public void userClicksSignInButtonInPage() {
-        commonPageElements.signin.click();
-    }
-    @And("user clicks my operations button")
-    public void userClicksMyOperationsButton() {
-        commonPageElements.operations.click();
-    }
-
-    @And("user clicks manage customers button")
-    public void userClicksManageCustomersButton() {
-        commonPageElements.manageCustomers.click();
-    }
-
-    @And("user clicks create A New Customer button")
-    public void userClicksCreateANewCustomerButton() {
-        commonPageElements.createANewCustomer.click();
-    }
-
-    @And("user enters ssn number")
-    public void userEntersSsnNumber() {
-        createEditACustomerPage.SSN.sendKeys(ConfigReader.getProperty("customer_ssn"));
-    }
-
-    @And("user clicks on the search button")
-    public void userClicksOnTheSearchButton() {
-        createEditACustomerPage.button.click();
-    }
-    @Then("verify the {string} is displayed")
-    public void verifyTheIsDisplayed(String arg0) {
-        Assert.assertTrue(createEditACustomerPage.translationNotFoundMessage.isDisplayed());
-    }
-    @Then("take the screenshot")
-
-    public void takeTheScreenshot() {
+    @And("user verifies the Zip Code of the customer")
+    public void userVerifiesTheZipCodeOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.zipCode.isDisplayed());
     }
 
 
+    @Then("user verifies the first name of the customer")
+    public void userVerifiesTheFirstNameOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.firstName.isDisplayed());
+    }
+
+    @And("user verifies the last name of the customer")
+    public void userVerifiesTheLastNameOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.lastName.isDisplayed());
+    }
+
+    @And("user verifies middle initial of the customer")
+    public void userVerifiesMiddleInitialOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.MiddleInitial.isDisplayed());
+    }
+
+    @When("user verifies the email of the customer")
+    public void userVerifiesTheEmailOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.email.isDisplayed());
+    }
+
+    @And("user verifies the mobile phone number of the customer")
+    public void userVerifiesTheMobilePhoneNumberOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.mobilePhoneNumber.isDisplayed());
+    }
+
+    @And("user verifies the phone number of the customer")
+    public void userVerifiesThePhoneNumberOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.phoneNumber.isDisplayed());
+
+    }
+
+    @And("user verifies the address of the customer")
+    public void userVerifiesTheAddressOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.address.isDisplayed());
+    }
+
+    @And("user verifies the city of the customer")
+    public void userVerifiesTheCityOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.city.isDisplayed());
+    }
+
+    @And("user verifies the Ssn of the customer")
+    public void userVerifiesTheSsnOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.ssn.isDisplayed());
+    }
+
+    @Then("User verifies the Create Date of the customer")
+    public void userVerifiesTheCreateDateOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.createDate.isDisplayed());
+    }
+
+    @And("user verifies the Country of the customer")
+    public void userVerifiesTheCountryOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.country.isDisplayed());
+    }
+
+    @And("user verifies the State of the customer")
+    public void userVerifiesTheStateOfTheCustomer() {
+        Assert.assertTrue(createEditACustomerPage.state.isDisplayed());
+    }
 }
