@@ -1,4 +1,5 @@
 @user_registration
+@valid_user_registration
 Feature: Registration
   Background:
     Given user is on the gmi bank application page
@@ -44,3 +45,4 @@ Feature: Registration
     When user enter eleven digits ssn number
     Then verify that only nine digits are in SSN Number textbox
     And close the application
+

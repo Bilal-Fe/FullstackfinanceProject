@@ -22,11 +22,11 @@ public class User_Login_Stepdefinitions {
 
     }
 
-    @And("user clicks login button")
-    public void userClicksLoginButton() {
-
-        loginPage.loginDropdownClick.click();
-    }
+//    @And("user clicks login button")
+//    public void userClicksLoginButton() {
+//
+//        loginPage.loginDropdownClick.click();
+//    }
 
     @When("user clicks sign in button")
     public void userClicksSignInButton() {

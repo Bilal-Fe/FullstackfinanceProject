@@ -113,4 +113,5 @@ public class CustomerPages {
 
     @FindBy(xpath = "//div[contains(text(),'Internal server error')]")
     public WebElement FailMessage;
+
 }
