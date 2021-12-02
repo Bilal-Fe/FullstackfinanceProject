@@ -3,7 +3,7 @@ Feature: User create a new account as a employee
 
   Background:
     Given user is on the gmi bank application page
-    And user clicks sign in button
+    And user clicks on Sign in button
     When user sign in as an employee
     And user clicks My operations
     And user clicks Manage Account
