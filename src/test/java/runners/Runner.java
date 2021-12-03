@@ -1,6 +1,5 @@
 package runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -17,7 +16,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@manage_customer",
+        tags = "@login_test",
         dryRun = false
 )
 

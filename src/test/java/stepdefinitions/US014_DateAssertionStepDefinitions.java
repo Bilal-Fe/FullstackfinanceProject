@@ -9,6 +9,7 @@ import pages.RegistrationPage;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class US014_DateAssertionStepDefinitions {
     CommonPageElements commonPageElements = new CommonPageElements();
@@ -31,7 +32,7 @@ public class US014_DateAssertionStepDefinitions {
     @And("User selects past time for create date")
     public void userSelectsPastTimeForCreateDate() {
         WebElement dateBox = manageAccountPage.createDateBox;
-        dateBox.sendKeys("1/11");
+        dateBox.sendKeys("01/11/2020");
     }
 
 
@@ -47,18 +48,39 @@ public class US014_DateAssertionStepDefinitions {
     public void employeeBoxShouldHaveElements() {
         String empolyeeBox = manageAccountPage.employeeBox.getText();
         Assert.assertNotEquals("", empolyeeBox);
+        //There is a bug
 
     }
 
     @And("User selects future time for create date")
     public void userSelectsFutureTimeForCreateDate() {
         WebElement dateBox = manageAccountPage.createDateBox;
-        dateBox.sendKeys("1/1/2035");
+        dateBox.sendKeys("01/01/2035");
     }
 
     @Then("date box has month day and minute")
     public void dateBoxHasMonthDayAndMinute() {
         String defaultDate = manageAccountPage.createDateBox.getAttribute("value");
         System.out.println(defaultDate);
+    }
+
+    @Then("check the date is current date")
+    public void checkTheDateIsCurrentDate() {
+        String defaultDate = manageAccountPage.createDateBox.getAttribute("value");
+        Assert.assertTrue(defaultDate.contains("T"));
+    }
+
+    @Then("check the date format")
+    public void checkTheDateFormat() {
+        String today = new SimpleDateFormat("yyyy/MM/dd").format(new Date()).replaceAll("/","-");
+        String defaultDate = manageAccountPage.createDateBox.getAttribute("value");
+        Assert.assertTrue(defaultDate.contains(today));
+    }
+
+    @Then("date box has hour and minute")
+    public void dateBoxHasHourAndMinute() {
+        String defaultDate = manageAccountPage.createDateBox.getAttribute("value");
+        Assert.assertTrue(defaultDate.contains("00:00"));
+
     }
 }
