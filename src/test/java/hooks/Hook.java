@@ -17,13 +17,13 @@ public class Hook {
 
     @After
     public void tearDown(Scenario scenario) {
-        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-       //Attaching the screenshot to the scenarios in the default-cucumber-reports.html
-
-        if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png", "Screenshot");
-        }
-        ReusableMethods.waitFor(1);
-        Driver.closeDriver();
+//        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+//       //Attaching the screenshot to the scenarios in the default-cucumber-reports.html
+//
+//        if (scenario.isFailed()) {
+//            scenario.attach(screenshot, "image/png", "Screenshot");
+//        }
+//        ReusableMethods.waitFor(1);
+//        Driver.closeDriver();
     }
 }
