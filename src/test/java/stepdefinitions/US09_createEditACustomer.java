@@ -9,13 +9,20 @@ import org.junit.Assert;
 import pages.CommonPageElements;
 import pages.CreateEditACustomerPage;
 import utilities.ConfigReader;
+import utilities.ReusableMethods;
+
+import static junit.framework.TestCase.assertTrue;
 
 public class US09_createEditACustomer {
 
     CreateEditACustomerPage createEditACustomerPage = new CreateEditACustomerPage();
-    CommonPageElements commonPageElements = new CommonPageElements();
-    Faker faker = new Faker();
+    ReusableMethods reusableMethods = new ReusableMethods();
 
+    @Then("verify the {string} is displayed")
+    public void verifyTheIsDisplayed(String arg0) {
+        ReusableMethods.waitFor(2);
+        assertTrue(createEditACustomerPage.greenline.isDisplayed());
+    }
     @And("user verifies the Zip Code of the customer")
     public void userVerifiesTheZipCodeOfTheCustomer() {
         Assert.assertTrue(createEditACustomerPage.zipCode.isDisplayed());
@@ -39,6 +46,7 @@ public class US09_createEditACustomer {
 
     @When("user verifies the email of the customer")
     public void userVerifiesTheEmailOfTheCustomer() {
+
         Assert.assertTrue(createEditACustomerPage.email.isDisplayed());
     }
 
@@ -82,4 +90,11 @@ public class US09_createEditACustomer {
     public void userVerifiesTheStateOfTheCustomer() {
         Assert.assertTrue(createEditACustomerPage.state.isDisplayed());
     }
+
+    @Then("verify the {string} is displayed for SSN")
+    public void verifyTheIsDisplayedForSSN(String arg0) {
+        ReusableMethods.waitFor(2);
+        assertTrue(createEditACustomerPage.greenline.isDisplayed());
+    }
+
 }

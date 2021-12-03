@@ -127,5 +127,25 @@ public class CreateEditACustomerPage {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement greenline;
 
+    //newly added
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    public WebElement addressRequired;
+
+    @FindBy(xpath = "//label[@for='tp-customer-country']")
+    public WebElement countryRequired;
+
+    @FindBy(xpath = "//label[@for='tp-customer-state']")
+    public WebElement stateRequired;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement cityRequired;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])")
+    public WebElement error;
+
 }
 

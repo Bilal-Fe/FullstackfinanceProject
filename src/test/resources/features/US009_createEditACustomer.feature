@@ -16,7 +16,7 @@ Feature: As_an_employee_create_a_new_customer
 
     And user enters ssn number
     And user clicks on the search button
-    Then verify the "green text" is displayed
+    Then verify the "green text" is displayed for SSN
     And take the screenshot
     Then close the application
 
