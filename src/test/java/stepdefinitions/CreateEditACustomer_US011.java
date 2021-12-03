@@ -32,15 +32,6 @@ public class CreateEditACustomer_US011 {
     CommonPageElements commonPageElements = new CommonPageElements();
 
 
-//    @Given("user is on the application page")
-//    public void user_is_on_the_application_page() {
-//        Driver.getDriver().get("https://www.gmibank.com/");
-//    }
-
-//    @Given("user clicks sign in button")
-//    public void user_clicks_register_button() {
-//        commonPageElements.clickSignInButton();
-//    }
 
     @And("user enters username of customer")
     public void userEntersUsernameOfCustomer() {
@@ -76,6 +67,19 @@ public class CreateEditACustomer_US011 {
     public void userEntersSsnNumber() {
         createEditACustomerPage.SSN.sendKeys("456-57-8890");
     }
+
+    @And("user edits User_name_of_customer")
+    public void userEditsUser_name_of_customer() {
+    }
+
+    @And("user enters Ssn of customer")
+    public void userEntersSsnOfCustomer() {
+    }
+
+    @And("user enters name of customer")
+    public void userEntersNameOfCustomer() {
+    }
+
     //BU EKLENDI
     @Then("verify the green text is displayed")
     public void verifyTheGreenTextIsDisplayed() {
@@ -89,21 +93,6 @@ public class CreateEditACustomer_US011 {
         createEditACustomerPage.button.click();
     }
 
-    @Then("verify the {string} is displayed")
-    public void verifyTheIsDisplayed(String arg0) {
-    }
-
-    @Then("take the screenshot")
-    public void takeTheScreenshot() {
-    }
-
-    @And("user enters name of customer")
-    public void userEntersNameOfCustomer() {
-    }
-
-    @And("user enters last name of customer")
-    public void userEntersLastNameOfCustomer() {
-    }
 
     @And("user enters middle initial of customer")
     public void userEntersMiddleInitialOfCustomer() {
@@ -111,9 +100,7 @@ public class CreateEditACustomer_US011 {
         createEditACustomerPage.middleInitial.sendKeys("Q");
     }
 
-    @And("user enters Mobile Phone Number of customer")
-    public void userEntersMobilePhoneNumberOfCustomer() {
-    }
+
 
     @And("user enters phone number of customer")
     public void userEntersPhoneNumberOfCustomer() {
@@ -127,9 +114,6 @@ public class CreateEditACustomer_US011 {
         createEditACustomerPage.zipCode.sendKeys("12345");
     }
 
-    @And("user enters Address of customer")
-    public void userEntersAddressOfCustomer() {
-    }
 
     @And("user enters City of customer")
     public void userEntersCityOfCustomer() {
@@ -137,10 +121,6 @@ public class CreateEditACustomer_US011 {
         createEditACustomerPage.city.sendKeys("Miami");
     }
 
-    @And("user enters Ssn of customer")
-    public void userEntersSsnOfCustomer() {
-
-    }
 
     @And("user edits name of customer")
     public void userEditsNameOfCustomer() {
@@ -153,11 +133,6 @@ public class CreateEditACustomer_US011 {
         createEditACustomerPage.savebutton.click();
     }
 
-    @Then("verify the {string} is not displayed")
-    public void verifyTheIsNotDisplayed(String arg0) {
-
-
-    }
 
     @And("user edits last name of customer")
     public void userEditsLastNameOfCustomer() {
@@ -263,9 +238,6 @@ public class CreateEditACustomer_US011 {
         createEditACustomerPage.state.sendKeys("Florida");
     }
 
-    @And("user edits User_name_of_customer")
-    public void userEditsUser_name_of_customer() {
-    }
 
     @And("user edits Account_of_customer")
     public void userEditsAccount_of_customer() {
@@ -284,14 +256,5 @@ public class CreateEditACustomer_US011 {
             checkbox1.click();
         }
     }
-
-//    @Then("close the application")
-//    public void close_the_application() {
-//        Driver.closeDriver();
-//
-//
-//    }
-
-
 
 }

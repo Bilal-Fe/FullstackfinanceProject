@@ -105,7 +105,7 @@ public class UserRegistrationStepDefinitions {
     }
     @Then("close the application")
     public void close_the_application() {
-       // Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     @When("user enters all valid required data and invalid nine digits phone number")
