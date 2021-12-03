@@ -55,6 +55,7 @@ public class US013_CreateNewAccountStepDefinitions {
     public void user_should_be_able_to_see_create_or_edit_a_account_page() {
         Assert.assertEquals(commonPageElements.MyOperationsButton.getText(), "My Operations");
     }
+
     @When("user not enter description see an error message for description box")
     public void userNotEnterDescriptionSeeAnErrorMessageForDescriptionBox() {
         manageAccountPage.descriptionBox.click();
@@ -101,6 +102,7 @@ public class US013_CreateNewAccountStepDefinitions {
         manageAccountPage.saveButton.click();
 
     }
+
     @Then("user  selects Suspended status type")
     public void user_selects_suspended_status_type() {
         Select se2 = new Select(manageAccountPage.selectAccountStatus);
@@ -145,6 +147,7 @@ public class US013_CreateNewAccountStepDefinitions {
         Assert.assertEquals(allOptions.get(3).getText(), "INVESTING");
 
     }
+
     @When("user select accounts status there should be three accounts")
     public void userSelectAccountsStatusThereShouldBeThreeAccounts() {
 
@@ -156,3 +159,5 @@ public class US013_CreateNewAccountStepDefinitions {
     }
 
 }
+
+
