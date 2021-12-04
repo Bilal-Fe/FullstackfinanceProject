@@ -49,6 +49,8 @@ public class US014_DateAssertionStepDefinitions {
         String empolyeeBox = manageAccountPage.employeeBox.getText();
         Assert.assertNotEquals(" ", empolyeeBox);
         //There is a bug
+        System.out.println(empolyeeBox + "Empoyee box should have elements. But it is empty");
+
 
     }
 

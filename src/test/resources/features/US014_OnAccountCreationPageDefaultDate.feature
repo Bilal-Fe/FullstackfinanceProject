@@ -73,10 +73,11 @@
     Then user clicks signout button
     And close the application
 
-    @the_Employee_not_blank
-    Scenario: us14_tc009_employee_box_should_not_be_blank
-      When user clicks create an account
-      And user should be able to see Create or edit a Account page
-      Then employee box should have elements
-      Then user clicks signout button
-      And close the application
+  @the_Employee_not_blank
+  Scenario: us14_tc009_employee_box_should_not_be_blank
+    When user clicks create an account
+    And user should be able to see Create or edit a Account page
+    Then employee box should have elements
+    Then user clicks signout button
+    And close the application
+
