@@ -41,7 +41,7 @@ public class CustomerApi9Steps {
     }
 
     @Given("user should get all customer data and deserialize the data to java")
-    public void userShouldGetAllCustomerDataAndDeserializeTheDataToJava() throws IOException {
+    public void userShouldGetAllCustomerDataAndDeserializeTheDataToJava() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         customer9s = objectMapper.readValue(response.asString(),Customer9[].class);
         System.out.println(customer9s[1].getFirstName());
