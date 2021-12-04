@@ -117,7 +117,7 @@ public class AsAnEmployeeManageCostumer {
         customerPages.EditAddress.clear();
         //customerPages.EditAddress.sendKeys(ReusableMethods.getDataTableData(DataTable.emptyDataTable(),"address"));
         customerPages.EditAddress.sendKeys(faker.address().fullAddress());
-        ReusableMethods.selectFromDropDown(customerPages.EditCountry,"Turkey");
+        ReusableMethods.selectFromDropDown(customerPages.EditCountry,"27198");
         customerPages.EditState.clear();
         //customerPages.EditState.sendKeys(ReusableMethods.getDataTableData(DataTable.emptyDataTable(),"state"));
         customerPages.EditState.sendKeys(faker.address().state());
