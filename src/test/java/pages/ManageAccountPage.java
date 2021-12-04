@@ -59,5 +59,15 @@ public class ManageAccountPage {
     @FindBy(xpath = "(//a[@class='dropdown-toggle nav-link'])[3]")
     public WebElement chevron;
 
+    @FindBy(xpath = "//span[.='My Operations']")
+    public WebElement myOperations;
 
+    @FindBy(xpath = "//span[.='Manage Accounts']")
+    public WebElement manageAccounts;
+
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+    public WebElement editButton;
+
+    @FindBy(xpath = "//span[.='Accounts']")
+    public WebElement accounts;
 }

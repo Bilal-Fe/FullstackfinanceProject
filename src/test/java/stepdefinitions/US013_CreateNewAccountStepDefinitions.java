@@ -73,7 +73,6 @@ public class US013_CreateNewAccountStepDefinitions {
     public void user_enters_data_in_description_box() {
         manageAccountPage.descriptionBox.sendKeys("Saving");
 
-
     }
 
     @When("user  provides a balance for the first time account creation as Dollar")
@@ -159,3 +158,5 @@ public class US013_CreateNewAccountStepDefinitions {
     }
 
 }
+
+

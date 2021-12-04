@@ -32,6 +32,15 @@ public class CreateEditACustomer_US011 {
     CommonPageElements commonPageElements = new CommonPageElements();
 
 
+//    @Given("user is on the application page")
+//    public void user_is_on_the_application_page() {
+//        Driver.getDriver().get("https://www.gmibank.com/");
+//    }
+
+//    @Given("user clicks sign in button")
+//    public void user_clicks_register_button() {
+//        commonPageElements.clickSignInButton();
+//    }
 
     @And("user enters username of customer")
     public void userEntersUsernameOfCustomer() {
