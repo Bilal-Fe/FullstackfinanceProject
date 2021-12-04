@@ -28,6 +28,12 @@ public class User_Login_Stepdefinitions {
         loginPage.loginDropdownClick.click();
     }
 
+//    @When("user clicks sign in button")
+//    public void userClicksSignInButton() {
+//        ReusableMethods.waitFor(2);
+//        loginPage.signInClick.click();
+//    }
+
     @Then("access to login page")
     public void accessToLoginPage() {
         ReusableMethods.waitFor(3);

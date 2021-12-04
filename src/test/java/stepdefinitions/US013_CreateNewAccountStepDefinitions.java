@@ -21,7 +21,6 @@ public class US013_CreateNewAccountStepDefinitions {
     ManageAccountPage manageAccountPage = new ManageAccountPage();
     CustomerPages customerPages = new CustomerPages();
 
-
     @Given("user clicks sign in button")
     public void user_clicks_sign_in_button() {
         commonPageElements.clickSignInButton();
@@ -74,7 +73,6 @@ public class US013_CreateNewAccountStepDefinitions {
     @When("user enters data in description box")
     public void user_enters_data_in_description_box() {
         manageAccountPage.descriptionBox.sendKeys("Saving");
-
 
     }
 
@@ -161,3 +159,5 @@ public class US013_CreateNewAccountStepDefinitions {
     }
 
 }
+
+
