@@ -8,7 +8,7 @@ Feature: As an customer money transfer
       | cameliamueller | Camelia.30 |
     Then verify the My Operations is displayed
     And customer  selects My Operations dropdown
-
+  @smoke
   Scenario: US015_TC001 customer should transfer money
     When customer  selects Transfer Money on the dropdown
     Then verify the TRANSFER BETWEEN YOUR ACCOUNTS is displayed on the page

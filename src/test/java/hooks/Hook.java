@@ -24,6 +24,6 @@ public class Hook {
 //            scenario.attach(screenshot, "image/png", "Screenshot");
 //        }
 //        ReusableMethods.waitFor(1);
-//        Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

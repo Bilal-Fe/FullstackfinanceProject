@@ -18,7 +18,7 @@ Feature: Login_Functionality_With_Right_Credentials
       | manager_username | manager_password |
       | BugFightersMgr   | Bugfighters$1    |
 
-
+  @smoke
   @admin_login_test
   Scenario Outline: us004_tc002_login_with_admin_credentials
     Given user enters admin username "<admin_username>"
@@ -32,7 +32,7 @@ Feature: Login_Functionality_With_Right_Credentials
       | admin_username   | admin_password  |
       | BugFightersAdmin | FatihGul1469.  |
 
-
+  @smoke
   @employee_login_test
   Scenario Outline: us004_tc003_login_with_employee_credentials
     Given user enters employee username "<employee_username>"
@@ -45,7 +45,7 @@ Feature: Login_Functionality_With_Right_Credentials
     Examples: employee_data
       | employee_username | employee_password |
       | mary.jane         | Mary.Jane1+       |
-
+  @smoke
   @customer_login_test
   Scenario Outline: us004_tc004_login_with_customer_credentials
     Given user enters customer username "<customer_username>"

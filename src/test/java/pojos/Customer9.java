@@ -16,8 +16,8 @@ public class Customer9 {
     private String city;
     private String ssn;
     private String createDate;
-    private String zelleEnrolled;
-    private String country;
+    private boolean zelleEnrolled;
+    private Country9 country;
     private String state;
     private User9 user;
     private String accounts;
@@ -118,19 +118,19 @@ public class Customer9 {
         this.createDate = createDate;
     }
 
-    public String getZelleEnrolled() {
+    public boolean getZelleEnrolled() {
         return zelleEnrolled;
     }
 
-    public void setZelleEnrolled(String zelleEnrolled) {
+    public void setZelleEnrolled(boolean zelleEnrolled) {
         this.zelleEnrolled = zelleEnrolled;
     }
 
-    public String getCountry() {
+    public Country9 getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country9 country) {
         this.country = country;
     }
 

@@ -9,9 +9,10 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.Customer9;
 import utilities.ConfigReader;
+import utilities.JsonUtil;
 
 
-import java.io.IOException;
+
 
 import static io.restassured.RestAssured.*;
 
@@ -44,6 +45,7 @@ public class CustomerApi9Steps {
     public void userShouldGetAllCustomerDataAndDeserializeTheDataToJava() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         customer9s = objectMapper.readValue(response.asString(),Customer9[].class);
+//        customer9s = JsonUtil.convertJsonToJava(response.asString(),Customer9[].class);
         System.out.println(customer9s[1].getFirstName());
         System.out.println(customer9s[1].getLastName());
 

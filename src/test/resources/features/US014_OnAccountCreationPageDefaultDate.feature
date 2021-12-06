@@ -25,7 +25,7 @@
     And user clicks create an account
     Then check the date format
     Then user clicks signout button
-
+    @smoke
   @check_the_current_date
   Scenario: us14_tc004_default_date_should_be_the_same_current_date
     When user clicks create an account

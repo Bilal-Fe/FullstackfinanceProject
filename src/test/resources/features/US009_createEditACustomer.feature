@@ -10,7 +10,7 @@ Feature: As_an_employee_create_a_new_customer
     And user clicks my operations button
     And user clicks manage customers button
     And user clicks create A New Customer button
-
+  @smoke
   Scenario: TC01_User can search for a customer by using SSN
 
 
