@@ -9,9 +9,3 @@
     And user saves the customer data to correspondent files
     Then user needs to validate all customer api data
 
-
-
-
-
-
-

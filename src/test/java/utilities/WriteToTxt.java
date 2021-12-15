@@ -32,7 +32,16 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
-
+    public static void saveDataInFileWithSSN(String fileName, Customer9[] customers)  {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            for (int i = 0; i < customers.length ; i++) {
+                writer.append(customers[i].getSsn()+",\n");
+            }
+            writer.close();
+        } catch(Exception e){
+        }
+    }
     public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));

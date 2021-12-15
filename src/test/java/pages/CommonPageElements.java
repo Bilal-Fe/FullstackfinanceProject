@@ -87,6 +87,8 @@ public class CommonPageElements {
     @FindBy(xpath = "//input[@name='search-ssn']")
     public WebElement SSN;
 
+
+
 }
 
 
