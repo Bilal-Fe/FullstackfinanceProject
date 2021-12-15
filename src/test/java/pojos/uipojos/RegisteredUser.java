@@ -1,4 +1,4 @@
-package pojos;
+package pojos.uipojos;
 
 public class RegisteredUser {
     private String ssn;

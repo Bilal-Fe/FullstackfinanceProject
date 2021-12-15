@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uisteps;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -46,7 +46,7 @@ public class MoneyTransferStepDefinitions {
 
     @When("customer  selects Transfer Money on the dropdown")
     public void customerSelectsTransferMoneyOnTheDropdown() {
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(4);
         moneyTransferPage.transferMoney.click();
     }
 
@@ -58,7 +58,7 @@ public class MoneyTransferStepDefinitions {
     @And("customer  selects one account on the from line")
     public void customerSelectsOneAccountOnTheFromLine() {
         Select select = new Select(moneyTransferPage.fromAccount);
-        ReusableMethods.waitForClickablility(moneyTransferPage.fromAccount, 3);
+        ReusableMethods.waitForClickablility(moneyTransferPage.fromAccount, 4);
         Random random = new Random();
         List<WebElement> allFromOption = select.getOptions();
         int lengthAllFromOption = allFromOption.size();
@@ -69,7 +69,7 @@ public class MoneyTransferStepDefinitions {
     @And("customer  selects one account on the to line")
     public void customerSelectsOneAccountOnTheToLine() {
         Select select = new Select(moneyTransferPage.toAccount);
-        ReusableMethods.waitForClickablility(moneyTransferPage.toAccount, 3);
+        ReusableMethods.waitForClickablility(moneyTransferPage.toAccount, 4);
         Random random = new Random();
         List<WebElement> allToOption = select.getOptions();
         int lengthAllToOption = allToOption.size();

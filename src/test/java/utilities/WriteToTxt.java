@@ -1,5 +1,10 @@
 package utilities;
-import pojos.*;
+import pojos.apipojos.CustomerApi;
+import pojos.uipojos.Customer;
+import pojos.uipojos.RegisteredUser;
+import pojos.uipojos.Registrant;
+import pojos.uipojos.States;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -32,7 +37,9 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
-    public static void saveDataInFileWithSSN(String fileName, Customer9[] customers)  {
+
+    public static void saveDataInFileWithSSN(String fileName, CustomerApi[] customers)  {
+
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
             for (int i = 0; i < customers.length ; i++) {
@@ -42,6 +49,7 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+
     public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
@@ -64,6 +72,31 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+
+
+//    public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
+//        try {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+//            writer.append(customer.getUser().getFirstName());
+//            writer.close();
+//        } catch(Exception e){
+//        }
+//    }
+//    public static void saveDataInFileWithAllCustomerInfo(String fileName, Customer[] customers)  {
+//        try {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+//            for (int i =0; i<customers.length;i++){
+//                writer.append(customers[i].getFirstName()+" , "+customers[i].getLastName()+"\n");
+//                if(customers[i].getUser() != null)
+//                    writer.append(customers[i].getUser().getFirstName());
+//                if(customers[i].getCountry() != null)
+//                    writer.append(customers[i].getCountry().getName());
+//            }
+//            writer.close();
+//        } catch(Exception e){
+//        }
+//    }
+
     public static void saveAllStates(String fileName, States[] states)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));

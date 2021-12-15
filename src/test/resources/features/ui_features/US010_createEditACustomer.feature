@@ -13,7 +13,11 @@ Feature: US00010_Info_of_customer_can_be_created
     And user enters ssn number
     And user clicks on the search button
 
+<<<<<<< HEAD:src/test/resources/features/US010_createEditACustomer.feature
   @smoke
+=======
+  @SmokeTest
+>>>>>>> main:src/test/resources/features/ui_features/US010_createEditACustomer.feature
   Scenario: TC01_name_of_customer_can_be_edited
 
     And user enters first name of customer

@@ -26,7 +26,11 @@ Feature: As_an_Employee_manage_Costumer
     When user clicks on edit button
     Then verify that save button is clickable
     And close the webpage
+<<<<<<< HEAD:src/test/resources/features/US012_As_An_Employee_manage_Customer.feature
   @smoke
+=======
+  @SmokeTest
+>>>>>>> main:src/test/resources/features/ui_features/US012_As_An_Employee_manage_Customer.feature
   Scenario:TC_04 Customer information can be edit by using edit button
     Then verify that edit button is clickable
     When user clicks on edit button

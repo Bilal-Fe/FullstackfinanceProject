@@ -1,4 +1,3 @@
-
 @login_test
 Feature: Login_Functionality_With_Right_Credentials
   Background:

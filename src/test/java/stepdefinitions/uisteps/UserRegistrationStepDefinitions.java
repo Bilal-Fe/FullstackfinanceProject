@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uisteps;
 
 import com.github.javafaker.Faker;
 import io.cucumber.datatable.DataTable;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.CommonPageElements;
 import pages.RegistrationPage;
-import pojos.RegisteredUser;
+import pojos.uipojos.RegisteredUser;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;

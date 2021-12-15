@@ -13,6 +13,7 @@
     Then user clicks signout button
     And close the application
 
+  @SmokeTest
   @click_edit_button
   Scenario: us14_tc002_employee_can_go_to_account_edit_page
     When click edit button
@@ -20,12 +21,18 @@
     Then user clicks signout button
     And close the application
 
+  @SmokeTest
   @check_date_format
   Scenario: us14_tc003_date_should_be_m_d_y_h_m
     And user clicks create an account
     Then check the date format
     Then user clicks signout button
+<<<<<<< HEAD:src/test/resources/features/US014_OnAccountCreationPageDefaultDate.feature
     @smoke
+=======
+
+  @SmokeTest
+>>>>>>> main:src/test/resources/features/ui_features/US014_OnAccountCreationPageDefaultDate.feature
   @check_the_current_date
   Scenario: us14_tc004_default_date_should_be_the_same_current_date
     When user clicks create an account
