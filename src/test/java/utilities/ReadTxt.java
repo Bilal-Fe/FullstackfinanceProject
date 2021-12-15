@@ -1,14 +1,13 @@
 package utilities;
 
-import pojos.Customer;
-import pojos.Registrant;
-import pojos.States;
-import pojos.User;
+import pojos.uipojos.Customer;
+import pojos.uipojos.Registrant;
+import pojos.uipojos.States;
+import pojos.uipojos.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 public class ReadTxt {
 
