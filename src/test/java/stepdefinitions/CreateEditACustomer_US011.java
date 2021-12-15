@@ -1,28 +1,13 @@
 package stepdefinitions;
-import com.github.javafaker.Faker;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import pages.CommonPageElements;
 import pages.CreateEditACustomerPage;
-import pages.CustomerPages;
-import pages.RegistrationPage;
-import pojos.RegisteredUser;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-import utilities.WriteToTxt;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
 

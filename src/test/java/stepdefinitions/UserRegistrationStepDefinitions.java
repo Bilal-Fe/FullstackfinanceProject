@@ -12,7 +12,6 @@ import pojos.RegisteredUser;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-import utilities.WriteToTxt;
 
 import java.io.IOException;
 
@@ -101,7 +100,7 @@ public class UserRegistrationStepDefinitions {
         ReusableMethods.waitForVisibility(registrationPage.registrationSuccessMessage, 5);
         boolean isDisplayed = registrationPage.registrationSuccessMessage.isDisplayed();
         Assert.assertTrue(isDisplayed);
-        WriteToTxt.saveRegisteredUserData(ConfigReader.getProperty("fileNameOfRegisteredUser"), registeredUser);
+       // WriteToTxt.saveRegisteredUserData(ConfigReader.getProperty("fileNameOfRegisteredUser"), registeredUser);
     }
     @Then("close the application")
     public void close_the_application() {
