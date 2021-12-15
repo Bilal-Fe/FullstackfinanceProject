@@ -9,16 +9,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class Hook {
-
-<<<<<<< HEAD
-    @Before
-    public void setUp() {
-
-    }
-
-    @After
-    public void tearDown(Scenario scenario) {
-=======
 //    @Before
 //    public void setUp() {
 //
@@ -26,7 +16,6 @@ public class Hook {
 //
 //    @After
 //    public void tearDown(Scenario scenario) {
->>>>>>> main
 //        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
 //       //Attaching the screenshot to the scenarios in the default-cucumber-reports.html
 //
@@ -34,11 +23,6 @@ public class Hook {
 //            scenario.attach(screenshot, "image/png", "Screenshot");
 //        }
 //        ReusableMethods.waitFor(1);
-<<<<<<< HEAD
-        Driver.closeDriver();
-    }
-=======
 //        Driver.closeDriver();
 //    }
->>>>>>> main
 }
