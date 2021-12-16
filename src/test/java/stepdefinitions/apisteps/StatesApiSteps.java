@@ -2,6 +2,7 @@ package stepdefinitions.apisteps;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -92,9 +93,13 @@ public class StatesApiSteps {
     @And("validate {string} is created")
     public void validateIsCreated(String nameJson) throws Exception {
         Assert.assertEquals(201,response.getStatusCode());
-        ObjectMapper obj = new ObjectMapper();
-        states = obj.readValue(response.asString(), CountryApi[].class);
-        System.out.println(countries[0].getStates());
+     //   ObjectMapper obj = new ObjectMapper();
+     //   states = obj.readValue(response.asString(), CountryApi[].class);
+     //   System.out.println(countries[0].getStates());
+        Gson gson=new Gson();
+
+        String jsonFromMap=gson.toJson();
+        System.out.println(jsonFromMap);
 
 
     }
