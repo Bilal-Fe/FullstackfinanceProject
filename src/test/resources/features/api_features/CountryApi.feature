@@ -6,11 +6,11 @@ Feature: Read countries
   Scenario Outline: create a country
     Given user sets the response using end point "https://www.gmibank.com/api/tp-countries" and creates country using "<idJson>" and "<nameJson>"
     Examples:
-      | idJson | nameJson   |
-      | name   | Ruwanda |
-      | name   | Jurdan |
+      | idJson | nameJson |
+      | name   | Japan    |
+      | name   | Russia   |
 
-Scenario: read all countries
+  Scenario: read all countries
     Given user sets the countries to response using "https://www.gmibank.com/api/tp-countries"
     And user saves the countries to correspondent files
     Then user validates the countries

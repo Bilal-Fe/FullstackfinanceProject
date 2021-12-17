@@ -65,6 +65,8 @@ public class CountryApiSteps {
         System.out.println(countries[0].getName());
     }
 
+
+
     @Then("user validates the countries")
     public void userValidatesTheCountries() {
     }
