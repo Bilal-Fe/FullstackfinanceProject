@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 public class DatabaseUtility {
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
@@ -58,6 +59,7 @@ public class DatabaseUtility {
     public static Object getCellValue(String query) {
         return getQueryResultList(query).get(0).get(0);
     }
+    public static Object getCellValue(String query,int rowNum, int cellNum) {return getQueryResultList(query).get(rowNum).get(cellNum);}
     /**
      *
      * @param query
@@ -68,6 +70,7 @@ public class DatabaseUtility {
     public static List<Object> getRowList(String query) {
         return getQueryResultList(query).get(0);
     }
+    public static List<Object> getRowList(String query, int rowNum) {return getQueryResultList(query).get(rowNum);}
     /**
      *
      * @param query

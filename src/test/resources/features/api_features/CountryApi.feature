@@ -1,4 +1,3 @@
-
 @Country
 Feature: Read countries
 

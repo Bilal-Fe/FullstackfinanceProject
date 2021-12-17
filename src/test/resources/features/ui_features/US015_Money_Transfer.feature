@@ -8,11 +8,8 @@ Feature: As an customer money transfer
       | cameliamueller | Camelia.30 |
     Then verify the My Operations is displayed
     And customer  selects My Operations dropdown
-<<<<<<< HEAD:src/test/resources/features/US015_Money_Transfer.feature
-  @smoke
-=======
+
   @SmokeTest
->>>>>>> main:src/test/resources/features/ui_features/US015_Money_Transfer.feature
   Scenario: US015_TC001 customer should transfer money
     When customer  selects Transfer Money on the dropdown
     Then verify the TRANSFER BETWEEN YOUR ACCOUNTS is displayed on the page

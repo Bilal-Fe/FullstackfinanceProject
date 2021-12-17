@@ -27,12 +27,9 @@
     And user clicks create an account
     Then check the date format
     Then user clicks signout button
-<<<<<<< HEAD:src/test/resources/features/US014_OnAccountCreationPageDefaultDate.feature
-    @smoke
-=======
+
 
   @SmokeTest
->>>>>>> main:src/test/resources/features/ui_features/US014_OnAccountCreationPageDefaultDate.feature
   @check_the_current_date
   Scenario: us14_tc004_default_date_should_be_the_same_current_date
     When user clicks create an account
