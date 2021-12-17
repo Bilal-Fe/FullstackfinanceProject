@@ -12,7 +12,7 @@ Feature: Read countries
 
 Scenario: read all countries
     Given user sets the countries to response using "https://www.gmibank.com/api/tp-countries"
-    #And user saves the countries to correspondent files
+    And user saves the countries to correspondent files
     Then user validates the countries
 @DeleteCountry
   Scenario Outline: delete countries

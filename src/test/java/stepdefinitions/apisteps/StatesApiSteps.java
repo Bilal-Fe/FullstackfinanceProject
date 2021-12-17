@@ -1,20 +1,15 @@
 package stepdefinitions.apisteps;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.mapper.ObjectMapperDeserializationContext;
+
 import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.apipojos.CountryApi;
 import utilities.ConfigReader;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -22,6 +17,7 @@ public class StatesApiSteps {
     Response response;
     CountryApi[] countries;
     CountryApi[] states;
+
     @Given("user sets the response using api end point {string} and updates states using {string} and {string}")
     public void userSetsTheResponseUsingApiEndPointAndUpdatesStatesUsingAnd(String endPoint, String id, String name) {
         response = given().headers(
@@ -91,12 +87,12 @@ public class StatesApiSteps {
                 .extract()
                 .response();
         response.prettyPrint();
+
     }
 
-    @Then("validate {string} is created")
-    public void validateIsCreated(String nameJson) throws Exception {
+    @Then("validate status code is 201")
+    public void validateStatusCodeIs201()  {
         Assert.assertEquals(201,response.getStatusCode());
-
 
     }
 }
