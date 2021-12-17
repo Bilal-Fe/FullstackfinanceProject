@@ -7,6 +7,7 @@ import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.apipojos.CountryApi;
+import utilities.Authentication;
 import utilities.ConfigReader;
 
 import java.util.HashMap;
@@ -17,7 +18,6 @@ import static org.junit.Assert.assertEquals;
 
 public class Us26UpdateCountrySteps {
     Response response;
-    CountryApi[] countries;
     CountryApi inputCountry = new CountryApi();
 
 
@@ -29,7 +29,7 @@ public class Us26UpdateCountrySteps {
 
         response = given().headers(
                         "Authorization",
-                        "Bearer " + ConfigReader.getProperty("api_bearerToken"),
+                        "Bearer " + Authentication.generateToken(),
                         "Content-Type",
                         ContentType.JSON,
                         "Accept",

@@ -20,7 +20,7 @@ public class ReadTxt {
             while (line != null) {
                 Customer customer = new Customer();
                 sb.append(line);
-//                sb.append(System.lineSeparator());
+                sb.append(System.lineSeparator());
                 line = br.readLine();
                 String [] each = line.split(",");
                 if(each[0] != null)
@@ -48,7 +48,7 @@ public class ReadTxt {
             while (line != null) {
                 Customer customer = new Customer();
                 customer.setSsn(line.split(",")[0]);
-                sb.append(System.lineSeparator());
+//                sb.append(System.lineSeparator());
                 line = br.readLine();
 
                 System.out.println(i++);
@@ -86,7 +86,7 @@ public class ReadTxt {
 
     }
 
-        //    public static List<States> returnAllStates(String filePath){
+//            public static List<States> returnAllStates(String filePath){
 //        List<States>all = new ArrayList<>();
 //        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 //            StringBuilder sb = new StringBuilder();
@@ -184,6 +184,26 @@ public class ReadTxt {
         return all;
     }
 
+    public static List<String> returnAllCustomersSSNs(String filePath){
+        List<String>allSSNIds = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+//            System.out.println(line);
+            int i = 0;
+            while (line != null) {
+                String temp = "";
+                temp =line.split(",")[0].trim();
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+                System.out.println(i++);
+                allSSNIds.add(temp);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return allSSNIds;
+    }
 
     public static List<User> returnAWholeUser(String filePath){
         List<User>all = new ArrayList<>();

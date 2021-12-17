@@ -1,9 +1,7 @@
 package stepdefinitions.apisteps;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.apipojos.CountryApi;
