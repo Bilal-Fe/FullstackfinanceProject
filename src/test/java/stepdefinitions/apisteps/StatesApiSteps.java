@@ -13,6 +13,9 @@ import org.junit.Assert;
 import pojos.apipojos.CountryApi;
 import utilities.ConfigReader;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class StatesApiSteps {
@@ -90,16 +93,9 @@ public class StatesApiSteps {
         response.prettyPrint();
     }
 
-    @And("validate {string} is created")
+    @Then("validate {string} is created")
     public void validateIsCreated(String nameJson) throws Exception {
         Assert.assertEquals(201,response.getStatusCode());
-     //   ObjectMapper obj = new ObjectMapper();
-     //   states = obj.readValue(response.asString(), CountryApi[].class);
-     //   System.out.println(countries[0].getStates());
-        Gson gson=new Gson();
-
-        String jsonFromMap=gson.toJson();
-        System.out.println(jsonFromMap);
 
 
     }
