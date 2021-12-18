@@ -4,15 +4,20 @@ package stepdefinitions.apisteps;
 
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
+
 import io.restassured.response.Response;
+import org.junit.Assert;
 import pojos.apipojos.CountryApi;
 import utilities.ConfigReader;
+
 
 import static io.restassured.RestAssured.given;
 
 public class StatesApiSteps {
     Response response;
     CountryApi[] countries;
+    CountryApi[] states;
+
     @Given("user sets the response using api end point {string} and updates states using {string} and {string}")
     public void userSetsTheResponseUsingApiEndPointAndUpdatesStatesUsingAnd(String endPoint, String id, String name) {
         response = given().headers(
@@ -81,5 +86,13 @@ public class StatesApiSteps {
                 .contentType(ContentType.JSON)
                 .extract()
                 .response();
+        response.prettyPrint();
+
+    }
+
+    @Then("validate status code is 201")
+    public void validateStatusCodeIs201()  {
+        Assert.assertEquals(201,response.getStatusCode());
+
     }
 }
