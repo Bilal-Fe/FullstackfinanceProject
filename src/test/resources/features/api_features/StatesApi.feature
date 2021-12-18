@@ -19,9 +19,11 @@ Feature: Read and delete states
   @CreateState
   Scenario Outline: create a state
     Given user sets the response using end point "https://www.gmibank.com/api/tp-states" and creates states using "<idJson>" and "<nameJson>"
+
     Examples: create state
       | idJson | nameJson         |
       | 103786 | British Columbia |
+
 
 
   @UpdateState
