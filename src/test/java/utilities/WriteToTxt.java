@@ -1,5 +1,6 @@
 package utilities;
 import pojos.apipojos.CustomerApi;
+import pojos.apipojos.RegistrantsApi;
 import pojos.uipojos.Customer;
 import pojos.uipojos.RegisteredUser;
 import pojos.uipojos.Registrant;
@@ -47,6 +48,18 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+
+    public static void saveRegistrantsDataInFileWithSSN(String registrantFileName, RegistrantsApi[] registrants)  {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(registrantFileName, true));
+            for (int i = 0; i < registrants.length ; i++) {
+                writer.append(registrants[i].getSsn()+",\n");
+            }
+            writer.close();
+        } catch(Exception e){
+        }
+    }
+
 
 //    public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
 //        try {
