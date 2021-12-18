@@ -15,9 +15,10 @@ public class Authentication {
         map.put("username", username);
         map.put("password",password);
         map.put("rememberme","true");
-        String endPoint = "https://www.gmibank.com/api/authenticate";//we need to generate a new token
+        String endPoint = "https://www.gmibank.com/api/authenticate";//we ned to generate a new token
         Response response1 = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
         JsonPath token = response1.jsonPath();
         return token.getString("id_token");
+
     }
 }

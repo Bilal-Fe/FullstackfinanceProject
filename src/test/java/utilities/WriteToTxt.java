@@ -51,6 +51,7 @@ public class WriteToTxt {
         }
     }
 
+
     public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
@@ -59,6 +60,7 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+
 
 
     public static void saveRegistrantsDataInFileWithSSN(String registrantFileName, RegistrantsApi[] registrants)  {
@@ -113,6 +115,7 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+
     public static void saveAllCustomers(String fileName, Customer[]customers)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
@@ -125,6 +128,7 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
+
     public static void saveAllCustomer(String fileName, Customer customer,String password,String username)  {
         try {
             String name ="src\\test\\resources\\test_data\\CustomerInfo.txt";
@@ -201,9 +205,5 @@ public class WriteToTxt {
 
         }
     }
-
-
-
-
 
 }
