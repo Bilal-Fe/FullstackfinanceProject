@@ -59,8 +59,6 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
-
-
 //    public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
 //        try {
 //            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
