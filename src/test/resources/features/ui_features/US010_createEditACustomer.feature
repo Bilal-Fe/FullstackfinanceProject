@@ -13,7 +13,7 @@ Feature: US00010_Info_of_customer_can_be_created
     And user enters ssn number
     And user clicks on the search button
 
-
+  @EndtoEndTest
   @SmokeTest
   Scenario: TC01_name_of_customer_can_be_edited
 

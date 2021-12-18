@@ -9,6 +9,7 @@ Feature: As an customer money transfer
     Then verify the My Operations is displayed
     And customer  selects My Operations dropdown
 
+  @EndtoEndTest
   @SmokeTest
   Scenario: US015_TC001 customer should transfer money
     When customer  selects Transfer Money on the dropdown
@@ -19,6 +20,7 @@ Feature: As an customer money transfer
     And customer  writes a description
     When customer  clicks Make Transfer button
     Then verify Transfer is succesfull message is displayed on the page
+    Then close the application
 
   Scenario: US015_TC002 customer should not transfer money without selected one account on the "from" and "to" line
     When customer  selects Transfer Money on the dropdown
@@ -68,9 +70,12 @@ Feature: As an customer money transfer
     And customer  writes a description
     When customer  clicks Make Transfer button
     Then verify translation-not-found[error.Balanceexceed] message is displayed on the page
+
+  @EndtoEndTest
   @SmokeTest
   Scenario: US015_TC007 customer should see their transactions
     When customer selects My Accounts on the dropdown
     Then verify the Customer Accounts is displayed on the page
     And customer clicks View Transaction button
     Then verify the ID is displayed
+    Then close the application

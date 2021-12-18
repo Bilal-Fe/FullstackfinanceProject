@@ -18,7 +18,7 @@ Feature: Login_Functionality_With_Right_Credentials
       | manager_username | manager_password |
       | BugFightersMgr   | Bugfighters$1    |
 
-
+  @EndtoEndTest
   @SmokeTest
   @admin_login_test
   Scenario Outline: us004_tc002_login_with_admin_credentials
@@ -33,7 +33,7 @@ Feature: Login_Functionality_With_Right_Credentials
       | admin_username   | admin_password  |
       | BugFightersAdmin | FatihGul1469.  |
 
-
+  @EndtoEndTest
   @SmokeTest
   @employee_login_test
   Scenario Outline: us004_tc003_login_with_employee_credentials
@@ -48,6 +48,7 @@ Feature: Login_Functionality_With_Right_Credentials
       | employee_username | employee_password |
       | mary.jane         | Mary.Jane1+       |
 
+  @EndtoEndTest
   @SmokeTest
   @customer_login_test
   Scenario Outline: us004_tc004_login_with_customer_credentials

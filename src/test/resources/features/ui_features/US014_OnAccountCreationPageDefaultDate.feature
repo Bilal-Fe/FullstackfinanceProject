@@ -13,6 +13,7 @@
     Then user clicks signout button
     And close the application
 
+    @EndtoEndTest
   @SmokeTest
   @click_edit_button
   Scenario: us14_tc002_employee_can_go_to_account_edit_page
@@ -21,6 +22,7 @@
     Then user clicks signout button
     And close the application
 
+    @EndtoEndTest
   @SmokeTest
   @check_date_format
   Scenario: us14_tc003_date_should_be_m_d_y_h_m
@@ -28,7 +30,7 @@
     Then check the date format
     Then user clicks signout button
 
-
+    @EndtoEndTest
   @SmokeTest
   @check_the_current_date
   Scenario: us14_tc004_default_date_should_be_the_same_current_date

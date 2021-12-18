@@ -16,6 +16,8 @@ Feature: User create a new account as a employee
     Then user  not enter balance see an error message for balance box
     Then user clicks signout button
     And close the application
+
+  @EndtoEndTest
   @SmokeTest
   @create_checking_active_account
   Scenario: us013_tc002_create_new_checking_account_with_active_status_type
@@ -49,6 +51,8 @@ Feature: User create a new account as a employee
     And User clicks save button
     Then user clicks signout button
     And close the application
+
+  @EndtoEndTest
   @SmokeTest
   @create_saving_active_account
   Scenario: us013_tc005_create_new_saving_account_with_active_status_type

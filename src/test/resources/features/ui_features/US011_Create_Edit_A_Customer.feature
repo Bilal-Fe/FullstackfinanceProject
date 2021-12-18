@@ -24,7 +24,7 @@ Feature: US00011_the_date_should_be_typed_at_the_time_of_creation_a_customer
     And user enters City of customer
     And user enters Ssn of customer
 
-  @smoke
+
   Scenario: TC01_date_of_account_of_customer_can_be_created
 
     And user enters Ssn of customer

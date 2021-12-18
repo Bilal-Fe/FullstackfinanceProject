@@ -27,6 +27,7 @@ Feature: As_an_Employee_manage_Costumer
     Then verify that save button is clickable
     And close the webpage
 
+  @EndtoEndTest
   @SmokeTest
   Scenario:TC_04 Customer information can be edit by using edit button
     Then verify that edit button is clickable

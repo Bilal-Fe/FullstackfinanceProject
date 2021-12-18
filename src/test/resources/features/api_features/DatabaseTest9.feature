@@ -3,7 +3,7 @@ Feature: Databa testing
 
   Background:
     Given user creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
-
+@EndtoEndTest
   @db9test
   Scenario Outline: database testing
     Given user sends their query to db and gets related data "<query>" and "<columnName>"
