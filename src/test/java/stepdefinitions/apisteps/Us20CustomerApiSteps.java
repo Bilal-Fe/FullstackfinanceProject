@@ -9,13 +9,12 @@ import pojos.apipojos.CustomerApi;
 import utilities.ConfigReader;
 import utilities.ReadTxt;
 import utilities.WriteToTxt;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
 
-public class CustomerApiSteps {
+public class Us20CustomerApiSteps {
     Response  response;
     String bearerToken = ConfigReader.getProperty("api_bearerToken");
     CustomerApi[] customers;
@@ -25,7 +24,7 @@ public class CustomerApiSteps {
     public void user_uses_api_end_point_to_get_all_customer_data(String url) {
         response = given().headers(
                         "Authorization",
-                        "Bearer " + bearerToken,
+                        "Bearer " + ConfigReader.getProperty("api_bearerToken"),
                         "Content-Type",
                         ContentType.JSON,
                         "Accept",
@@ -42,9 +41,6 @@ public class CustomerApiSteps {
     public void user_should_get_all_customer_data_and_deserialize_the_data_to_java() throws Exception {
         ObjectMapper obj = new ObjectMapper();
         customers = obj.readValue(response.asString(), CustomerApi[].class );
-//        System.out.println(customers[1].getFirstName() );
-//        System.out.println(customers[1].getLastName() );
-//        System.out.println(customers[1].getCountry().getName() );
 
     }
     @Given("user saves the customer data to correspondent files")
@@ -57,9 +53,10 @@ public class CustomerApiSteps {
         List<String> expectedSSN = new ArrayList<>();
         expectedSSN.add("235-85-0011");
         expectedSSN.add("222-33-4441");
-//        expectedSSN.add("303-81-4293");
 
         List<String> actualSSNIDs = ReadTxt.returnCustomerSNNList(fileName);
         Assert.assertTrue("All SSN Ids are not matching!", actualSSNIDs.containsAll(expectedSSN));
     }
+
+
 }
