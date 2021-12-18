@@ -6,6 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.apipojos.CustomerApi;
+import utilities.Authentication;
 import utilities.ConfigReader;
 import utilities.ReadTxt;
 import utilities.WriteToTxt;
@@ -24,7 +25,7 @@ public class Us20CustomerApiSteps {
     public void user_uses_api_end_point_to_get_all_customer_data(String url) {
         response = given().headers(
                         "Authorization",
-                        "Bearer " + ConfigReader.getProperty("api_bearerToken"),
+                        "Bearer " + Authentication.generateToken(),
                         "Content-Type",
                         ContentType.JSON,
                         "Accept",
