@@ -35,7 +35,6 @@ public class US013_CreateNewAccountStepDefinitions {
 
     }
 
-
     @And("user clicks My operations")
     public void userClicksMyOperations() {
         commonPageElements.MyOperationsButton.click();

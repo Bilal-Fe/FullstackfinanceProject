@@ -1,7 +1,12 @@
 package utilities;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import pojos.uipojos.Country;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -117,5 +122,137 @@ public class ExcelUtil {
             }
         }
         return data;
+    }
+    public void setSheetData(List <Country>  countries, String path , String sheetName){
+
+        for (int i = 0; i < countries.size(); i++) {
+
+            setCellData(countries.get(i).getName(),1, i);
+            String value = ""+countries.get(i).getId();
+            setCellData(value,2, i);
+
+        }
+
+    }
+
+    public void setHeaders(List <String> headers){
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet("country2");
+
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue(headers.get(0));
+        header.createCell(1).setCellValue(headers.get(1));
+
+    }
+    public static void main(String[] args) throws IOException {
+
+
+        String path = "src/test/resources/test_data/CountryData.xlsx";
+//        ExcelUtil excelUtil = new ExcelUtil(path, "country");
+        // ExcelUtil excelUtil = new ExcelUtil();
+        List <String> list = new ArrayList<>();
+        list.add("Name");
+        list.add("id");
+        //  excelUtil.setHeaders(list);
+//        excelUtil.setCellData("CountryName", 4,4);
+
+        List <Country> countries = new ArrayList<>();
+
+
+
+        Country country = new Country();
+
+        country.setName("Name");
+        country.setId(123);
+
+
+        Country country2 = new Country();
+
+        country2.setName("USA");
+        country2.setId(12348);
+
+
+        Country country3 = new Country();
+
+        country3.setName("Germany");
+        country3.setId(23456);
+
+        countries.add(country);
+//        countries.add(country2);
+//        countries.add(country3);
+//        excelUtil.setSheetData(countries, path,"country" );
+
+
+//        NiceExcelWriterExample excelWriter = new NiceExcelWriterExample();
+
+
+        String excelFilePath = "NiceJavaBooks.xls";
+
+        //  excelUtil.writeExcel(countries, path);
+
+    }
+
+    private Workbook getWorkbook(String excelFilePath)
+            throws IOException {
+        Workbook workbook = null;
+
+        if (excelFilePath.endsWith("xlsx")) {
+            workbook = new XSSFWorkbook();
+        } else if (excelFilePath.endsWith("xls")) {
+            workbook = new HSSFWorkbook();
+        } else {
+            throw new IllegalArgumentException("The specified file is not Excel file");
+        }
+
+        return workbook;
+    }
+
+
+    private void writeBook(Country aBook, Row row) {
+        Cell cell = row.createCell(1);
+        cell.setCellValue(aBook.getName());
+
+        cell = row.createCell(2);
+        cell.setCellValue(aBook.getId());
+
+    }
+
+    public void writeExcel(List<Country> listBook, String excelFilePath) throws IOException {
+        Workbook workbook = new HSSFWorkbook();
+        Sheet sheet = workbook.createSheet();
+
+        int rowCount = 0;
+
+        for (Country aBook : listBook) {
+            Row row = sheet.createRow(++rowCount);
+            writeBook(aBook, row);
+        }
+
+        try (FileOutputStream outputStream = new FileOutputStream(excelFilePath)) {
+            workbook.write(outputStream);
+        }
+    }
+
+    private void createHeaderRow(Sheet sheet) {
+
+        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
+        Font font = sheet.getWorkbook().createFont();
+        font.setBold(true);
+        font.setFontHeightInPoints((short) 16);
+        cellStyle.setFont(font);
+
+        Row row = sheet.createRow(0);
+        Cell cellTitle = row.createCell(1);
+
+        cellTitle.setCellStyle(cellStyle);
+        cellTitle.setCellValue("Title");
+
+        Cell cellAuthor = row.createCell(2);
+        cellAuthor.setCellStyle(cellStyle);
+        cellAuthor.setCellValue("Author");
+
+        Cell cellPrice = row.createCell(3);
+        cellPrice.setCellStyle(cellStyle);
+        cellPrice.setCellValue("Price");
     }
 }

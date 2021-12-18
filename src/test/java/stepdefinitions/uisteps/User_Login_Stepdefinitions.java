@@ -150,13 +150,13 @@ public class User_Login_Stepdefinitions {
 
     @Then("verify that cannot login")
     public void verifyThatCannotLogin() {
-       // Failed to sign in!
+        // Failed to sign in!
         ReusableMethods.waitForVisibility(loginPage.failedMessage, 5);
         boolean isDisplayed = loginPage.failedMessage.isDisplayed();
         Assert.assertTrue(isDisplayed);
 
     }
-   @When("click cancel back to main page")
+    @When("click cancel back to main page")
     public void click_cancel_back_to_main_page() {
         loginPage.cancelButton.click();
     }
@@ -184,13 +184,13 @@ public class User_Login_Stepdefinitions {
         loginPage.newRegisterButton.click();
 
     }
-      @Then ("verify that registration page")
-         public void verifyRegistrationPage(){
+    @Then ("verify that registration page")
+    public void verifyRegistrationPage(){
 
-         ReusableMethods.waitFor(2);
-         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("register"));
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("register"));
 
-   }
+    }
     @And ("click back to main page")
     public void backToMainPage(){
         Driver.getDriver().navigate().back();

@@ -1,5 +1,6 @@
 @CountryUpdate
 Feature: Update countries and validate them
+  @EndtoEndTest
   Scenario Outline: update a country and make validation
     Given user validate updated countries with end point "https://www.gmibank.com/api/tp-countries" and using "<id>" and "<countryName>"
     Examples:

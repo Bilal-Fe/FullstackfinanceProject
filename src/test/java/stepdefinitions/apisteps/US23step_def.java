@@ -13,6 +13,7 @@ import utilities.ConfigReader;
 import utilities.ReadTxt;
 import utilities.WriteToTxt;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class US23step_def {
     }
 
     @And("user saves the registrants to correspondent files")
-    public void userSavesTheRegistrantsToCorrespondentFiles() throws JsonProcessingException {
+    public void userSavesTheRegistrantsToCorrespondentFiles() throws IOException {
         response.prettyPrint();
         ObjectMapper obj = new ObjectMapper();
         registrants = obj.readValue(response.asString(), RegistrantsApi[].class);

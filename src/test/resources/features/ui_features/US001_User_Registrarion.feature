@@ -5,7 +5,9 @@ Feature: Registration
     Given user is on the gmi bank application page
     And user clicks register button
 
+
   @SmokeTest
+    @EndtoEndTest
   Scenario Outline: us001_tc001_enter_valid_required_data
     When user enters ssn "<ssn_number>"
     And user enters first name "<first_name>"

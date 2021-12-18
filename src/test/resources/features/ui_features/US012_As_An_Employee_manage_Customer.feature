@@ -26,6 +26,8 @@ Feature: As_an_Employee_manage_Costumer
     When user clicks on edit button
     Then verify that save button is clickable
     And close the webpage
+
+  @EndtoEndTest
   @SmokeTest
   Scenario:TC_04 Customer information can be edit by using edit button
     Then verify that edit button is clickable
@@ -53,16 +55,3 @@ Feature: As_an_Employee_manage_Costumer
     When user clicks on delete button on the message page
     Then verify that success message for delete customer is displayed
     And close the webpage
-
-
-
-
-
-
-
-
-
-
-
-
-
