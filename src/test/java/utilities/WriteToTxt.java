@@ -1,5 +1,6 @@
 package utilities;
 import pojos.apipojos.CustomerApi;
+import pojos.apipojos.RegistrantsApi;
 import pojos.uipojos.Customer;
 import pojos.uipojos.RegisteredUser;
 import pojos.uipojos.Registrant;
@@ -58,21 +59,29 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
-    public static void saveDataInFileWithAllCustomerInfo(String fileName, Customer[] customers)  {
+//    public static void saveDataInFileWithAllCustomerInfo(String fileName, Customer[] customers)  {
+//        try {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+//            for (int i = 0; i < customers.length; i++) {
+//                writer.append(customers[i].getFirstName() + " , " + customers[i].getLastName() + "\n");
+//                if (customers[i].getUser() != null)
+//                    writer.append(customers[i].getUser().getFirstName());
+//                if (customers[i].getCountry() != null)
+//                    writer.append(customers[i].getCountry().getName());
+//            } catch(Exception e){
+//            }
+//        }
+
+    public static void saveRegistrantsDataInFileWithSSN(String registrantFileName, RegistrantsApi[] registrants)  {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
-            for (int i =0; i<customers.length;i++){
-                writer.append(customers[i].getFirstName()+" , "+customers[i].getLastName()+"\n");
-                if(customers[i].getUser() != null)
-                    writer.append(customers[i].getUser().getFirstName());
-                if(customers[i].getCountry() != null)
-                    writer.append(customers[i].getCountry().getName());
+            BufferedWriter writer = new BufferedWriter(new FileWriter(registrantFileName, true));
+            for (int i = 0; i < registrants.length ; i++) {
+                writer.append(registrants[i].getSsn()+",\n");
             }
             writer.close();
         } catch(Exception e){
         }
     }
-
 
 //    public static void saveDataInFileWithUserInfo(String fileName, Customer customer)  {
 //        try {
