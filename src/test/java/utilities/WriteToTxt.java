@@ -49,6 +49,7 @@ public class WriteToTxt {
         }
     }
 
+
     public static void saveRegistrantsDataInFileWithSSN(String registrantFileName, RegistrantsApi[] registrants)  {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(registrantFileName, true));
@@ -101,7 +102,7 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
-//    public static void saveAllCustomers(String fileName, Customer[]customers)  {
+    //    public static void saveAllCustomers(String fileName, Customer[]customers)  {
 //        try {
 //            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
 //            for (int i=0; i<customers.length; i++) {
