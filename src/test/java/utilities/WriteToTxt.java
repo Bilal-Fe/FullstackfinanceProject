@@ -59,18 +59,7 @@ public class WriteToTxt {
         } catch(Exception e){
         }
     }
-//    public static void saveDataInFileWithAllCustomerInfo(String fileName, Customer[] customers)  {
-//        try {
-//            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
-//            for (int i = 0; i < customers.length; i++) {
-//                writer.append(customers[i].getFirstName() + " , " + customers[i].getLastName() + "\n");
-//                if (customers[i].getUser() != null)
-//                    writer.append(customers[i].getUser().getFirstName());
-//                if (customers[i].getCountry() != null)
-//                    writer.append(customers[i].getCountry().getName());
-//            } catch(Exception e){
-//            }
-//        }
+
 
     public static void saveRegistrantsDataInFileWithSSN(String registrantFileName, RegistrantsApi[] registrants)  {
         try {
